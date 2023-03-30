@@ -1,0 +1,109 @@
+<style>
+    h1 {
+      font-size: 24px;
+      text-align: center;
+      color: #800000;
+    }
+  
+    hr {
+      border: none;
+      height: 1px;
+      background-color: #ccc;
+      margin-top: 30px;
+      margin-bottom: 30px;
+    }
+  
+    a {
+      display: block;
+      padding: 10px;
+      text-align: center;
+      background-color: #800000;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 5px;
+      margin: 10px;
+      transition: background-color 0.2s ease-in-out;
+    }
+  
+    a:hover {
+      background-color: #8015003e;
+    }
+  
+    form {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-top: 30px;
+      margin-bottom: 30px;
+    }
+  
+    input[type="submit"] {
+      background-color: #800000;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      padding: 10px;
+      margin-top: 10px;
+      transition: background-color 0.2s ease-in-out;
+    }
+  
+    input[type="submit"]:hover {
+      background-color: #8015003e;
+      cursor: pointer;
+    }
+  
+    div {
+      margin: 10px;
+    }
+  
+    h3 {
+      font-size: 18px;
+      color: #800000;
+      margin-bottom: 10px;
+    }
+  
+    .result {
+      font-size: 16px;
+      color: #333;
+    }
+  
+    .result label {
+      font-weight: bold;
+      margin-right: 10px;
+    }
+  </style>
+
+	<h1>Two Steps Option Pricing Calculator</h1>
+	
+	<a href="Two steps">two steps option pricing calculator</a>
+	<div>
+		<a href="n steps">n steps option pricing calculator</a>
+	</div>
+	<div>
+		<a href="Black Scholes">black scholes option pricing calculator</a>
+	</div>
+	
+	<hr>
+	
+	<form action="", method="POST">
+		{% csrf_token %}
+		{{two.as_p}}
+		<input type="submit" value="Submit">
+	</form>
+	
+	<hr>
+	
+	<div class="result">
+		<h3>Result:</h3>
+		<div>
+			<label>Put:</label>
+			{{put}}
+		</div>
+		<div>
+			<label>Call:</label>
+			{{call}}
+		</div>
+	</div>
+	
+	<hr>
+	
